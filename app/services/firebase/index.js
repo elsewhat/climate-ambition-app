@@ -1,4 +1,5 @@
-import firebase from "react-native-firebase"
+import firebase from "@react-native-firebase/app"
+import firestore from "@react-native-firebase/firestore"
 import {
 	API_KEY,
 	AUTH_DOMAIN,
@@ -21,6 +22,6 @@ const config = {
 
 firebase.initializeApp(config)
 
-export const firestore = firebase.firestore()
+export const firestore_conn = firebase.firestore()
 
 export default firebase

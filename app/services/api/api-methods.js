@@ -1,5 +1,5 @@
-import {firestore} from '../firebase'
+import {firestore_conn} from '../firebase'
 
 export function getAmbitionHeaders() {
-  return firestore.collection('AmbitionHeaders').get();
+  return firestore_conn.collection('AmbitionHeaders').get();
 }
