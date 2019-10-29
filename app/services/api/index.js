@@ -1,2 +1,2 @@
-require('./api-methods');
+const api =require('./api-methods');
 export default api;

@@ -7,6 +7,7 @@ import api from '../../services/api';
 import * as actions from './actions';
 
 function* fetchAmbitionHeaders() {
+  console.log("Saga: fetchAmbitionHeaders")
   try {
     yield put(actions.fetchAmbitionHeadersRequested());
 

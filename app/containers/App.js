@@ -1,29 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React from 'react';
+import React, { Component } from 'react';
 
 import OverviewPage from './OverviewPage'
 import store from '../store/config';
-
-
+import { Provider } from 'react-redux'
+//import { MenuProvider } from 'react-native-popup-menu';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+//import AppNavigator from '../navigation';
 
 
-const MainNavigator = createStackNavigator(
+const MainNavigator = createAppContainer(createStackNavigator(
   {
     Overview: OverviewPage
   },
   { 
     initialRouteName: 'Overview'
   }
-);
+));
+
 
 
 export default class App extends Component {
@@ -37,10 +31,14 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MenuProvider>
-          <AppNavigator ref={(ref) => { setNavigator(ref); }} />
-        </MenuProvider>
+        <MainNavigator/>
       </Provider>
     );
   }
 }
+
+/*
+        <MenuProvider>
+          <AppNavigator ref={(ref) => { setNavigator(ref); }} />
+        </MenuProvider>
+        */

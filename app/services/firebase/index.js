@@ -20,7 +20,10 @@ const config = {
 	appId: APP_ID
 }
 
-firebase.initializeApp(config)
+if (!firebase.apps.length) {
+	firebase.initializeApp(config)
+ }
+
 
 export const firestore_conn = firebase.firestore()
 
